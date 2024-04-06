@@ -12,6 +12,8 @@ turbo-frame::before {
 
 .turbo-progress-bar {
   @apply h-2 bg-emerald-200;
+  height: 10px;
+  background-color: PeachPuff;
 }
 
 /* Buttons */
