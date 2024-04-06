@@ -13,14 +13,14 @@ class TackleBoxItemsController < ApplicationController
     @item = current_user.tackle_box_items.find(params[:id])
 
     @items =
-      current_user.tackle_box_items.
-        order(created_at: :asc).includes(:bait)
+      current_user.tackle_box_items
+                  .order(created_at: :asc).includes(:bait)
 
     @new_catch = current_user.fish_catches.new(bait: @item.bait)
 
     @fish_catches =
-      current_user.fish_catches.
-        where(bait: @item.bait).order(created_at: :desc)
+      current_user.fish_catches
+                  .where(bait: @item.bait).order(created_at: :desc)
   end
 
   def create
@@ -36,5 +36,4 @@ class TackleBoxItemsController < ApplicationController
 
     redirect_to baits_url
   end
-
 end

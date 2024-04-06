@@ -11,11 +11,9 @@ class FishCatchesController < ApplicationController
     @species = FishCatch::SPECIES
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @fish_catch.update(fish_catch_params)
@@ -41,7 +39,7 @@ class FishCatchesController < ApplicationController
     redirect_to tackle_box_item_for_catch(@fish_catch)
   end
 
-private
+  private
 
   def set_fish_catch
     @fish_catch = current_user.fish_catches.find(params[:id])
@@ -56,6 +54,6 @@ private
   end
 
   def fish_catches_for_bait(bait)
-    current_user.fish_catches.where(bait: bait).select(:weight)
+    current_user.fish_catches.where(bait:).select(:weight)
   end
 end

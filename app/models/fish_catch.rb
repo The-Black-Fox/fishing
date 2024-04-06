@@ -4,20 +4,20 @@ class FishCatch < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   SPECIES = [
-    "Brown Trout",
-    "Rainbow Trout",
-    "Lake Trout",
-    "Largemouth Bass",
-    "Smallmouth Bass",
-    "Bluegill",
-    "Walleye"
+    'Brown Trout',
+    'Rainbow Trout',
+    'Lake Trout',
+    'Largemouth Bass',
+    'Smallmouth Bass',
+    'Bluegill',
+    'Walleye'
   ]
 
   validates :species, presence: true,
-            inclusion: {
-              in: SPECIES,
-              message: "%{value} is not a valid species"
-            }
+                      inclusion: {
+                        in: SPECIES,
+                        message: '%<value>s is not a valid species'
+                      }
 
   validates :weight, :length,
             presence: true,
@@ -25,15 +25,15 @@ class FishCatch < ApplicationRecord
 
   attr_accessor :my_like
 
-  scope :with_species, ->(species) {
-    where(species: species) if species.present?
+  scope :with_species, lambda { |species|
+    where(species:) if species.present?
   }
 
-  scope :with_bait_name, ->(bait_name) {
-    where(baits: {name: bait_name}) if bait_name.present?
+  scope :with_bait_name, lambda { |bait_name|
+    where(baits: { name: bait_name }) if bait_name.present?
   }
 
-  scope :with_weight_between, ->(low, high) {
+  scope :with_weight_between, lambda { |low, high|
     where(weight: low..high) if low.present? && high.present?
   }
 end

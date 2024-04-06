@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "baits#index"
+  root 'baits#index'
 
   resources :baits
 
@@ -9,11 +9,11 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-  get "activity", to: "activity#index"
+  get 'activity', to: 'activity#index'
 
   resources :users
-  get "signup" => "users#new"
+  get 'signup' => 'users#new'
 
-  resource :session, only: [:new, :create, :destroy]
-  get "signin" => "sessions#new"
+  resource :session, only: %i[new create destroy]
+  get 'signin' => 'sessions#new'
 end

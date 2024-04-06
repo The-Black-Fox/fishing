@@ -18,7 +18,7 @@ class LikesController < ApplicationController
     redirect_to activity_url
   end
 
-private
+  private
 
   def find_fish_catch
     @fish_catch = FishCatch.find(params[:fish_catch_id])
