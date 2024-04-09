@@ -18,14 +18,12 @@
       <% end %>
     </ul>
   </nav>
-
   <div class="logo">
     <%= link_to baits_path do %>
       <%= image_tag("logo.svg") %>
       <h1>Gone Fishin'</h1>
     <% end %>
   </div>
-
   <nav class="secondary">
     <ul>
       <li>
@@ -34,7 +32,7 @@
       <li>
         <%= nav_link_to "Tackle Box", tackle_box_items_path %>
         <% if signed_in? %>
-          <div class="item-count">
+          <div class="item-count" id="tackle_box_items_count" >
             <%= current_user.tackle_box_items.size %>
           </div>
         <% end %>
