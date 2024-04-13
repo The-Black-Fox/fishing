@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Inline form-field error messages
 
 ActionView::Base.field_error_proc = proc do |html_tag, instance|

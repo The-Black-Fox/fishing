@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FishCatch < ApplicationRecord
   belongs_to :bait
   belongs_to :user
@@ -11,7 +13,7 @@ class FishCatch < ApplicationRecord
     'Smallmouth Bass',
     'Bluegill',
     'Walleye'
-  ]
+  ].freeze
 
   validates :species, presence: true,
                       inclusion: {

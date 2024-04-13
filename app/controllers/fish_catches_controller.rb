@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FishCatchesController < ApplicationController
   before_action :require_signin
   before_action :set_fish_catch, only: %i[show edit update destroy]

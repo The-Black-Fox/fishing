@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Bait < ApplicationRecord
   has_many :fish_catches
 

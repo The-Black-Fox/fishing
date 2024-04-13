@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # BAITS
 #
@@ -23,7 +25,7 @@ fire_tiger = Bait.create!(
   description: 'Muddy water or clear water, it makes no difference with this spinner. The Fire Tiger is versatile, consistent, and oh so tempting. 💙'
 )
 
-mr_mustache = Bait.create!(
+Bait.create!(
   name: 'Mr. Mustache',
   category: 'Popper',
   image: 'mr-mustache.png',
@@ -58,7 +60,7 @@ bucktail = Bait.create!(
   description: 'Time-tested and angler-approved... by the US Navy! During World War II, emergency kits for sailors and pilots included a bucktail along with fishing line. Rumor has it, this bait is still used as survival equipment by Navy Seals today. 🌠'
 )
 
-daredevil = Bait.create!(
+Bait.create!(
   name: 'Daredevil',
   category: 'Spoon',
   image: 'daredevil.png',

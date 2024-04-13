@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FishCatchesHelper
   def total_weight(fish_catches)
     fish_catches.map(&:weight).reduce(0, &:+)
