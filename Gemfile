@@ -41,9 +41,12 @@ gem 'bootsnap', require: false
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'erb_lint', require: false
+
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'htmlbeautifier'
   gem 'rubocop'
 end
 
